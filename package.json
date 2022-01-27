@@ -8,6 +8,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.5.8",
+    "@emotion/css": "^11.7.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.3.1",
+    "graphql": "^16.2.0",
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2"
@@ -17,6 +23,7 @@
     "@types/react": "17.0.38",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",
+    "jest": "^27.4.7",
     "typescript": "4.5.5"
   }
 }
