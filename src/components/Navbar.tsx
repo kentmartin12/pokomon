@@ -20,9 +20,11 @@ const Navbar: React.FC<{}> = () => {
                 align-items: center;
             `}>
                 <Link href='/'>
-                    <Image src={logo} width={138} height={38} />
+                    <Image src={logo} className={css`
+                        cursor: pointer;
+                    `} width={138} height={38} />
                 </Link>
-                <Link href='/'>
+                <Link href='/my-pokomon'>
                     <button className={css`
                         border-radius: 30px;
                         color: black;

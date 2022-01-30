@@ -1,34 +1,50 @@
-import type { NextPage } from 'next'
 import PokemonCard from '../components/Card'
-import { css } from '@emotion/css';
-import { GET_ALL_POKEMON_LIST } from '../graphql/queries/getAllPokemonList';
 import { useEffect, useState } from 'react';
-import { PokemonList } from '../interfaces/PokemonList';
 import { useQuery } from '@apollo/client';
+import Layout from '../components/Layout';
+import { Backdrop, CircularProgress } from '@mui/material';
+import { GET_ALL_POKEMON_LIST } from '../graphql/queries';
 
-const Home: NextPage = () => {
+export const Index: React.FC<{}> = () => {
 
   const { loading, data, error } = useQuery(GET_ALL_POKEMON_LIST, {
     variables: {
-      "limit": 9,
+      "limit": 25,
       "offset": 0
     }
   });
 
   const [pokemonData, setPokemonData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [onError, setOnError] = useState('');
 
   useEffect(() => {
-    setPokemonData(data?.pokemons?.results)
+    setPokemonData(data?.pokemons?.results);
+    if (loading) {
+      setIsLoading(true);
+    } else {
+      setIsLoading(false);
+    }
+    if (error) {
+      setOnError(error.message);
+      alert(onError);
+    }
   }, [data]);
 
   return (
-    <div className={css`
-      margin: 0 auto;
-      max-width: 960px;
-    `}>
+    <div>
+      <Backdrop open={isLoading}>
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <PokemonCard data={pokemonData || []} myPokemon={false} totalOwned={0}></PokemonCard>
     </div>
   )
 }
 
-export default Home
+export default function HomePage() {
+  return (
+    <Layout title='Pokomon Homepage'>
+      <Index></Index>
+    </Layout>
+  )
+}

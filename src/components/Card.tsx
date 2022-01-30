@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
+import Link from 'next/link';
 import * as React from 'react';
-import { PokemonCard } from '../interfaces/PokemonCard';
 import { PokemonList } from '../interfaces/PokemonList';
 
 const PokemonCard: React.FC<{
@@ -19,18 +19,20 @@ const PokemonCard: React.FC<{
             padding: 0 1px;
         `}>
             {data?.map(Q =>
-                <div className="card" key={Q.id}>
-                    <div className="cardPicture">
-                        <img src={Q.image} width={144} height={114} />
-                    </div>
-                    <div className="bottomCard">
-                        {myPokemon && <div>{pokemonNickname}</div>}
-                        <div className={css`
-                            text-transform: capitalize;
-                        `}>{Q.name}</div>
-                        <div>Owned: {totalOwned}</div>
-                    </div>
-                </div>
+                <Link href={'/pokomon/' + Q.name} key={Q.name}>
+                    <a className="card">
+                        <div className="cardPicture">
+                            <img src={Q.image} width={144} height={114} />
+                        </div>
+                        <div className="bottomCard">
+                            {myPokemon && <div>{pokemonNickname}</div>}
+                            <div className={css`
+                                    text-transform: capitalize;
+                                `}>{Q.name}</div>
+                            <div>Owned: {totalOwned}</div>
+                        </div>
+                    </a>
+                </Link>
             )}
         </div>
     );
