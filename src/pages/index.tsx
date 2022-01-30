@@ -7,16 +7,22 @@ import { GET_ALL_POKEMON_LIST } from '../graphql/queries';
 
 export const Index: React.FC<{}> = () => {
 
+  const [pokemonData, setPokemonData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [onError, setOnError] = useState('');
+  const [limit, setLimit] = useState(25);
+
   const { loading, data, error } = useQuery(GET_ALL_POKEMON_LIST, {
     variables: {
-      "limit": 25,
+      "limit": limit,
       "offset": 0
     }
   });
 
-  const [pokemonData, setPokemonData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [onError, setOnError] = useState('');
+  function loadMore() {
+    const load = limit + 25;
+    setLimit(load);
+  }
 
   useEffect(() => {
     setPokemonData(data?.pokemons?.results);
@@ -37,6 +43,9 @@ export const Index: React.FC<{}> = () => {
         <CircularProgress color="inherit" />
       </Backdrop>
       <PokemonCard data={pokemonData || []} myPokemon={false} totalOwned={0}></PokemonCard>
+      {!isLoading && <div className='home'>
+        <button className='catchBtn loadBtn' onClick={() => loadMore()}>Load More</button>
+      </div>}
     </div>
   )
 }
