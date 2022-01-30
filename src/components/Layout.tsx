@@ -7,7 +7,7 @@ const Layout: React.FC<{}> = ({ children }) => {
         <div>
             <Head>
                 <meta charSet="utf-8"></meta>
-                <meta name="viewport" content="width=divice-width ,initial-scale=1"></meta>
+                <meta name="viewport" content="width=device-width ,initial-scale=1"></meta>
                 <title>Pokomon</title>
             </Head>
             <header>

@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { Button } from '@mui/material';
 import Image from 'next/image';
 import Link from "next/link";
 import React from "react";
@@ -32,6 +31,10 @@ const Navbar: React.FC<{}> = () => {
                         height: 2rem;
                         width: 8rem;
                         font-weight: bold;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: #EDC74C;
+                        }
                     `} >My Pokomon</button>
                 </Link>
             </div>

@@ -1,0 +1,33 @@
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card {
+  max-width: 167px;
+  margin-top: 29px;
+  transition: 0.3s ease;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.cardPicture {
+  background: rgba(23, 48, 191, 0.4);
+  padding: 0.5rem;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.bottomCard {
+  padding: 0.5rem;
+  text-align: center;
+  background: #757dab;
+  border-radius: 0px 0px 15px 15px;
+  max-width: 144px;
+  max-height: 54px;
+  color: #F5F5F5;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
