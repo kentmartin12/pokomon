@@ -24,7 +24,7 @@ const Navbar: React.FC<{}> = () => {
                         cursor: pointer;
                     `} width={138} height={38} />
                 </Link>
-                <Link href='/my-pokomon'>
+                <Link href='/pokomon'>
                     <button className={css`
                         border-radius: 30px;
                         color: black;

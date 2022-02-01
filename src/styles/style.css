@@ -40,12 +40,19 @@ body {
 }
 
 .bottomCard {
-  padding: 0.5rem;
+  padding: 1rem;
   text-align: center;
   background: #757dab;
   border-radius: 0px 0px 15px 15px;
   max-width: 144px;
   max-height: 54px;
+  color: #F5F5F5;
+}
+
+.bottomCardOwned {
+  padding: 0.5rem;
+  text-align: center;
+  background: #757dab;
   color: #F5F5F5;
 }
 
@@ -121,6 +128,22 @@ body {
 
 .loadBtn {
   margin: 29px 0;
+}
+
+.releaseBtn {
+  border-radius: 5px;
+  color: #F5F5F5;
+  background-color: red;
+  border: none;
+  height: 1.5rem;
+  width: 8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.releaseBtn:hover {
+  background-color: #1730BF;
+  color: #F5F5F5;
 }
 
 .row {

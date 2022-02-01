@@ -42,7 +42,7 @@ export const Index: React.FC<{}> = () => {
       <Backdrop open={isLoading}>
         <CircularProgress color="inherit" />
       </Backdrop>
-      <PokemonCard data={pokemonData || []} myPokemon={false} totalOwned={0}></PokemonCard>
+      <PokemonCard data={pokemonData || []} isMyPokemon={false}></PokemonCard>
       {!isLoading && <div className='home'>
         <button className='catchBtn loadBtn' onClick={() => loadMore()}>Load More</button>
       </div>}
