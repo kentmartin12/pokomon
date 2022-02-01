@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import PokemonCard from '../../components/Card';
@@ -16,9 +17,16 @@ export const Index: React.FC<{}> = () => {
     return (
         <div>
             {myPokemon.length === 0 &&
-                <Link href="/">
-                    <button className='catchBtn'>Catch Now!</button>
-                </Link>
+                <div className={css`
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                `}>
+                    <h2>You don't have any Pokomon yet...</h2>
+                    <Link href="/">
+                        <button className='catchBtn'>Catch Now!</button>
+                    </Link>
+                </div>
             }
             {myPokemon.length !== 0 && <PokemonCard data={myPokemon || []} isMyPokemon={true}></PokemonCard>}
         </div>
