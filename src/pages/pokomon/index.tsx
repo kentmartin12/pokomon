@@ -22,7 +22,7 @@ export const Index: React.FC<{}> = () => {
                     flex-direction: column;
                     align-items: center;
                 `}>
-                    <h2>You don't have any Pokomon yet...</h2>
+                    <h2>You don&#39;t have any Pokomon yet...</h2>
                     <Link href="/">
                         <button className='catchBtn'>Catch Now!</button>
                     </Link>
