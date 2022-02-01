@@ -22,7 +22,7 @@ const Navbar: React.FC<{}> = () => {
                 <Link href='/'>
                     <Image src={logo} className={css`
                         cursor: pointer;
-                    `} width={138} height={38} />
+                    `} width={138} height={38} alt='logo' />
                 </Link>
                 <Link href='/pokomon'>
                     <button className={css`

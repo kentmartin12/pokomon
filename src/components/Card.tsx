@@ -36,7 +36,7 @@ const PokemonCard: React.FC<{
                 <Link href={'/pokomon/' + Q.name} key={index}>
                     <a className="card">
                         <div className="cardPicture">
-                            <img src={Q.image} width={144} height={114} />
+                            <img src={Q.image} width={144} height={114} alt='image' />
                         </div>
                         <div className="bottomCard">
                             <div className={css`
@@ -50,11 +50,11 @@ const PokemonCard: React.FC<{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                `}>
-                    <Link href={'/pokomon/' + Q.name} key={index}>
+                `} key={index}>
+                    <Link href={'/pokomon/' + Q.name}>
                         <a className="card">
                             <div className="cardPicture">
-                                <img src={Q.image} width={144} height={114} />
+                                <img src={Q.image} width={144} height={114} alt='image' />
                             </div>
                             <div className="bottomCardOwned">
                                 {isMyPokemon && <div className={css`
